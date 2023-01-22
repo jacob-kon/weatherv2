@@ -4,7 +4,7 @@ export default function Images({city, region, temp, feelsLike, valid}){
         <div className="imageWraper">
             <img src={weatherImage} alt="vally" />
             <div className='fields'>
-                {!valid && <h2 className='warning'>please enter a valid Zip code</h2>}
+                {!valid && <h3 className='warning'>please enter a valid Zip code</h3>}
                 <h4>City:  {city}</h4>   
                 <h4>Region:  {region}</h4>
                 {temp !== '' ?<h4>Temperature: {temp} Degrees</h4> :<h4>Temperature:</h4>}
