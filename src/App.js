@@ -44,7 +44,8 @@ function App() {
             setValid(true)
             await fetch(`https:api.weatherapi.com/v1/current.json?key=264a2478a3ba432b870195605221512&q=${zip}&aqi=no`)
             .then(response => response.json())
-            .then(data=> setFetchWeather(data))
+            // .then(data=> setFetchWeather(data))
+            .then(data=>console.log(data))
             .catch(err => console.log('please provide a valid zip code',err));
         }else{ setValid(false)}
 
