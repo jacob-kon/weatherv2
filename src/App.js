@@ -61,7 +61,7 @@ function App() {
                 value={zip}
                 />
             <div className='getWeather'>
-                <button className="btn1">Get Weather</button>
+                <button className="btn1">Get Weather!</button>
             </div>
         </form>
         
