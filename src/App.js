@@ -24,32 +24,26 @@ function App() {
         console.log('zip is now:', zip)
     }
 
+    async function handleSubmit(event){
+        event.preventDefault()
+        let response = await axios.get(`https:api.weatherapi.com/v1/current.json?key=264a2478a3ba432b870195605221512&q=${zip}&aqi=no`)
+        console.log('response recieved from handle submit is:',response)
+    }
+
+
     // async function handleSubmit(event){
     //     event.preventDefault()
     //     console.log('handle submit function ran')
     //     if (postcodeValidator(zip, 'US')){
     //         setValid(true)
     //         await axios.get(`https:api.weatherapi.com/v1/current.json?key=264a2478a3ba432b870195605221512&q=${zip}&aqi=no`)
-    //         .then(data=> setFetchWeather(data))
-    //         // .then(data=> console.log('this is what came back',data))
+    //         // .then(response => response.json())
+    //         // .then(data=> setFetchWeather(data))
+    //         .then(data=>console.log(data))
     //         .catch(err => console.log('please provide a valid zip code',err));
-    //         // console.log('from inside handle submit function',fetchWeather)
     //     }else{ setValid(false)}
 
-    //}
-    async function handleSubmit(event){
-        event.preventDefault()
-        console.log('handle submit function ran')
-        if (postcodeValidator(zip, 'US')){
-            setValid(true)
-            await axios.get(`https:api.weatherapi.com/v1/current.json?key=264a2478a3ba432b870195605221512&q=${zip}&aqi=no`)
-            // .then(response => response.json())
-            // .then(data=> setFetchWeather(data))
-            .then(data=>console.log(data))
-            .catch(err => console.log('please provide a valid zip code',err));
-        }else{ setValid(false)}
-
-    }
+    // }
  console.log('App() just rendered fetch weather is ',fetchWeather)
   return (
     <div className="App">
@@ -71,13 +65,13 @@ function App() {
         
        </div> 
        <Images 
-            valid = {valid}
-            //added data.
-            city={fetchWeather.location.name}
-            region={fetchWeather.location.region}
-            temp={fetchWeather.current.temp_f}
-            feelsLike={fetchWeather.current.feelslike_f}
-            />
+            // valid = {valid}
+            // //added data.
+            // city={fetchWeather.location.name}
+            // region={fetchWeather.location.region}
+            // temp={fetchWeather.current.temp_f}
+            // feelsLike={fetchWeather.current.feelslike_f}
+             />
        <Footer />
       
     </div>
