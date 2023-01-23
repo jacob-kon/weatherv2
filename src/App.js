@@ -26,8 +26,10 @@ function App() {
 
     async function handleSubmit(event){
         event.preventDefault()
-        let response = await axios.get(`https:api.weatherapi.com/v1/current.json?key=264a2478a3ba432b870195605221512&q=${zip}&aqi=no`)
-        console.log('response recieved from handle submit is:',response)
+         await fetch(`https:api.weatherapi.com/v1/current.json?key=264a2478a3ba432b870195605221512&q=${zip}&aqi=no`)
+        .then(response => response.json())
+        .then(data=>console.log('here is your data',data))
+        // console.log('response recieved from handle submit is:',response)
     }
 
 
